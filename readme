@@ -1,0 +1,11 @@
+目的：
+	验证maven根据不同环境的profiles，自动输出适合不同的jar包.
+
+验证步骤
+	eclipse 项目鼠标右键 ->Run As -> Maven build... 
+	Goals:clean package -Dmaven.test.skip=true
+	profiles:[development]|[jtest]|[production] (来源于pom.xml中的<profile id>)
+	在命令行窗口中执行 C:\Users\suman\workspace\demoMavenResource>java -jar target\demoMavenResource-0.0.1-SNAPSHOT.jar
+	结果：use production resource  这里是使用生产环境   
+	
+如果clean package -Dmaven.test.skip=true中，去掉忽略Dmaven.test.skip的参数，那么就只能用jtest的profiles
